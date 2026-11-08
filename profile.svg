@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" width="480" height="560">
+  <rect width="480" height="560" fill="#e4eaf4"/>
+  <g fill="none" stroke="#06b6d4" stroke-width="1.2" opacity="0.35">
+    <ellipse cx="240" cy="280" rx="210" ry="80"/>
+    <ellipse cx="240" cy="280" rx="210" ry="80" transform="rotate(60 240 280)"/>
+    <ellipse cx="240" cy="280" rx="210" ry="80" transform="rotate(120 240 280)"/>
+  </g>
+  <circle cx="240" cy="210" r="76" fill="#a0b3d1"/>
+  <path d="M80 560c0-92 72-150 160-150s160 58 160 150z" fill="#a0b3d1"/>
+  <text x="240" y="520" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#263c5c">Replace with your photograph</text>
+</svg>
