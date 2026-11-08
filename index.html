@@ -65,9 +65,9 @@ header.site.solid{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);bor
 .bar{display:flex;align-items:center;justify-content:space-between;height:4rem}
 .brand{font-family:var(--serif);font-weight:600;font-size:1.125rem;color:var(--navy-900);text-decoration:none}
 nav.main{display:none}
-nav.main ul{display:flex;gap:1.5rem;list-style:none;font-size:.875rem;color:var(--navy-600)}
+nav.main ul{display:flex;gap:1.25rem;list-style:none;font-size:.875rem;color:var(--navy-600)}
 nav.main a{text-decoration:none}nav.main a:hover{color:var(--acc-700)}
-@media(min-width:1180px){nav.main{display:block}.menu-btn{display:none!important}}
+@media(min-width:1260px){nav.main{display:block}.menu-btn{display:none!important}}
 .menu-btn{width:2.5rem;height:2.5rem;border:0;background:transparent;border-radius:6px;color:var(--navy-900);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
 .menu-btn:hover{background:var(--navy-50)}
 #mnav{display:none;border-top:1px solid var(--navy-100);background:#fff}
@@ -251,6 +251,23 @@ footer.site-f .wrap{display:flex;flex-direction:column;gap:.75rem}
   .js .rv{opacity:1;transform:none;transition:none}
   *{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+/* students */
+.courses{display:grid;gap:1.5rem}
+@media(min-width:768px){.courses{grid-template-columns:1fr 1fr}}
+.course h3{font-size:1.25rem;font-weight:600}
+.course .cm{margin-top:.25rem;font-size:.8125rem;color:var(--navy-500)}
+.course .cs{margin-top:.75rem;font-size:.875rem;color:var(--navy-600)}
+.course .empty{margin-top:1.25rem;border:1px dashed var(--navy-200);border-radius:8px;padding:1rem;font-size:.875rem;color:var(--navy-500)}
+.rtype{margin-top:1.25rem!important;font:600 .75rem var(--sans)!important;letter-spacing:.08em;text-transform:uppercase;color:var(--navy-500)!important}
+.rlist{list-style:none;margin-top:.5rem;display:grid;gap:.5rem}
+.rlist li{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .75rem;border:1px solid var(--navy-100);border-radius:8px;padding:.6rem .75rem;background:var(--navy-50)}
+.rlist a{font-size:.9rem;font-weight:500;color:var(--navy-900);text-decoration:none}
+.rlist a:hover{color:var(--acc-700);text-decoration:underline}
+.fbadge{font:600 .6875rem var(--sans);letter-spacing:.05em;border-radius:4px;background:#fff;border:1px solid var(--navy-200);color:var(--navy-600);padding:.05rem .4rem}
+.rnote{flex-basis:100%;font-size:.8125rem;color:var(--navy-500)}
+.stu-note{margin-top:2rem;font-size:.875rem;color:var(--navy-600)}
+
 @media print{header.site,.menu-btn,#contact form{display:none}.js .rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -278,7 +295,7 @@ footer.site-f .wrap{display:flex;flex-direction:column;gap:.75rem}
       <ul>
         <li><a href="#about">About</a></li><li><a href="#education">Education</a></li>
         <li><a href="#research">Research</a></li><li><a href="#projects">Projects</a></li>
-        <li><a href="#publications">Publications</a></li><li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li><li><a href="#experience">Experience</a></li><li><a href="#students">Students</a></li>
         <li><a href="#skills">Skills</a></li><li><a href="#cv">CV</a></li>
         <li><a href="#blog">Notes</a></li><li><a href="#contact">Contact</a></li>
       </ul>
@@ -291,7 +308,7 @@ footer.site-f .wrap{display:flex;flex-direction:column;gap:.75rem}
     <ul>
       <li><a href="#about">About</a></li><li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li><li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Publications</a></li><li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li><li><a href="#experience">Experience</a></li><li><a href="#students">Students</a></li>
       <li><a href="#skills">Skills</a></li><li><a href="#cv">CV</a></li>
       <li><a href="#blog">Notes</a></li><li><a href="#contact">Contact</a></li>
     </ul>
@@ -322,7 +339,7 @@ footer.site-f .wrap{display:flex;flex-direction:column;gap:.75rem}
       <ul class="plinks" id="heroLinks"></ul>
     </div>
     <div class="photo">
-      <img src="profile.svg" width="480" height="560" alt="Portrait of MD. Tohidul Islam Khan">
+      <img src="profile.jpg" width="480" height="560" style="aspect-ratio:6/7;object-fit:cover;object-position:top" alt="Portrait of MD. Tohidul Islam Khan">
     </div>
   </div>
 </section>
@@ -557,6 +574,18 @@ footer.site-f .wrap{display:flex;flex-direction:column;gap:.75rem}
   </div>
 </section>
 
+<!-- STUDENTS -->
+<section class="sec" id="students" aria-labelledby="stu-t">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">For Students</p><h2 id="stu-t">Class Slides and Course Documents</h2>
+      <p class="lead">Slides, notes, lab sheets and assignments for the courses I teach at IIUC. Please check this page for updates during the semester.</p>
+    </div>
+    <div class="courses" id="courseRoot"></div>
+    <p class="stu-note rv">If a file is missing or a link does not open, please let me know through the <a class="txtlink" href="#contact">contact form</a>.</p>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section class="sec" id="skills" aria-labelledby="sk-t">
   <div class="wrap">
@@ -707,6 +736,22 @@ var PUBLICATIONS = [
   { title: "Integrated Survey and Clinical Data for Risk Assessment and Survival Prediction in Colorectal Cancer Using Machine Learning",
     venue: "QPAIN 2025", year: 2025, type: "Conference paper", status: "published", doi: "10.1109/QPAIN66474.2025.11171700" }
 ];
+/* Course materials for the Students section.
+   To post something: add an object to a course's `resources` list.
+   type: "Slides" | "Notes" | "Lab" | "Assignment" | "Reference" | "Other"
+   href: a file in this repository (e.g. "DLD-Lecture-01.pdf") or a full link (Google Drive, etc.)
+   note (optional): a short line such as "Updated 12 Nov" or "Due 20 Nov".
+   Example:
+     { type: "Slides", title: "Lecture 1: Number systems", href: "DLD-Lecture-01.pdf", note: "Updated 12 Nov" }
+   Add code ("CSE 1xxx") and term ("Spring 2027") to a course when you want them shown. */
+var COURSES = [
+  { title: "Digital Logic Design", code: "", term: "",
+    summary: "Lecture slides, notes, lab sheets and assignments for Digital Logic Design.",
+    resources: [] },
+  { title: "Microprocessors", code: "", term: "",
+    summary: "Lecture slides, notes, lab sheets and assignments for Microprocessors.",
+    resources: [] }
+];
 /* ========================================================== */
 
 document.documentElement.classList.add("js");
@@ -761,6 +806,32 @@ PROFILES.forEach(function(p){
     function done(){ b.textContent="Citation copied"; setTimeout(function(){b.textContent="Copy citation";},2000); }
     if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,function(){window.prompt("Copy citation:",t);}); }
     else window.prompt("Copy citation:",t);
+  });
+})();
+
+/* ---- student course materials ---- */
+(function(){
+  var root=document.getElementById("courseRoot"); if(!root) return;
+  var order=["Slides","Notes","Lab","Assignment","Reference","Other"];
+  COURSES.forEach(function(c){
+    var h='<h3>'+esc(c.title)+'</h3>';
+    var cm=[c.code,c.term].filter(Boolean).map(esc).join(" · ");
+    if(cm) h+='<p class="cm">'+cm+'</p>';
+    if(c.summary) h+='<p class="cs">'+esc(c.summary)+'</p>';
+    var res=c.resources||[];
+    if(!res.length){ h+='<p class="empty">Materials will be posted here.</p>'; }
+    else order.forEach(function(type){
+      var items=res.filter(function(r){return (r.type||"Other")===type;});
+      if(!items.length) return;
+      h+='<h4 class="rtype">'+type+'</h4><ul class="rlist">'+items.map(function(r){
+        var isExt=/^https?:/i.test(r.href);
+        var href=isExt||r.href.indexOf("%")>=0 ? r.href : encodeURI(r.href);
+        var ext=(r.href.split("?")[0].split(".").pop()||"").toLowerCase();
+        var badge=isExt?"Link":(ext.length>0&&ext.length<=4?ext.toUpperCase():"File");
+        return '<li><a href="'+esc(href)+'"'+(isExt?' target="_blank" rel="noopener noreferrer"':' download')+'>'+esc(r.title)+'</a><span class="fbadge">'+badge+'</span>'+(r.note?'<span class="rnote">'+esc(r.note)+'</span>':'')+'</li>';
+      }).join("")+'</ul>';
+    });
+    var card=el("article","card course rv",h); root.appendChild(card);
   });
 })();
 
